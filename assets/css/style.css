@@ -75,8 +75,11 @@ section {
     border-radius: 4px;
 }
 .fixed {
-    position:fixed;
-    top:0;
+    z-index: 9999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 /* 
 #########################################
@@ -177,6 +180,14 @@ section {
 
 /* 
 #########################################
+#                 FOOTER                #
+######################################### 
+*/
+
+
+
+/* 
+#########################################
 #           MEDIA QUERIES               #
 ######################################### 
 */
@@ -210,17 +221,24 @@ section {
         align-items: center;
         height: inherit;
     }
+    .presentation h2{
+        font-size: 24px;
+    }
+    .presentation h3{
+        font-size: 64px;
+    }
+    .presentation__container{
+        font-size: 20px;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .presentation h2{
         font-size: 36px;
-        margin-bottom: 16px;
     }
     .presentation h3{
         font-size: 72px;
-        margin-bottom: 16px;
     }
     .presentation__container{
         font-size: 24px;
