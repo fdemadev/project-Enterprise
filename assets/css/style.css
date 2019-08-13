@@ -19,9 +19,14 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    src: url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
 }
+@font-face {
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/lora/v14/0QIvMX1D_JOuMwr7Iw.woff2) format('woff2');
+  }
 /* 
 #########################################
 #                GLOBALS                #
@@ -39,6 +44,7 @@ html, body {
 	min-height: 100vh;
     text-size-adjust: none;
     font-family: 'Roboto';
+    font-size: 16px;
 }
 
 img {
@@ -46,17 +52,45 @@ img {
 	display: block;
 	height: auto;
 }
+
+section {
+    height: calc(90vh - 80px);
+}
+
+.wrapper {
+    margin-right: auto; /* 1 */
+    margin-left:  auto; /* 1 */
+  
+    max-width: 960px; /* 2 */
+  
+    padding-right: 16px; /* 3 */
+    padding-left:  16px; /* 3 */
+}
+.btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 16px;
+    border: 1px solid;
+    border-radius: 4px;
+}
+.fixed {
+    position:fixed;
+    top:0;
+}
 /* 
 #########################################
 #                lOGO                   #
 ######################################### 
 */
 .logo{
-    width: 180px;
-    height: 40px;
-    background: url('assets/images/federicodema_logo_alpha.svg') no-repeat left center;
+    width: 250px;
+    height: 60px;
+    background: url('../images/federicodema_logo_gamma.svg') no-repeat left center;
     background-size: contain;
     text-indent: -9000px;
+
+    margin-bottom: 16px;
 }
 .logo a{
     display: block;
@@ -70,8 +104,130 @@ img {
 .header{
     display: flex;
     flex-flow: column;
+    align-items: center;
+    width: 100%;
 }
 .mainbar{
     display: flex;
     flex-flow: column;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 700;
+}
+.mainbar__link{
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 3px solid transparent;
+}
+.mainbar__link:hover{
+    color: var(--green);
+    border-bottom: 3px solid var(--green);
+}
+/* 
+#########################################
+#              PRESENTATION             #
+######################################### 
+*/
+.presentation{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: start;
+    width: 100%;
+
+    font-family: 'Lora';
+}
+.presentation h2{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 16px;
+}
+.presentation h3{
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+.presentation__container{
+    color:var(--grey);
+}
+.presentation__container p{
+    margin-bottom: 8px;
+}
+.presentation__container p:last-of-type{
+    margin-bottom: 16px;
+}
+.presentation__button{
+    color: var(--green);
+    text-transform: uppercase;
+}
+
+
+
+/* 
+#########################################
+#                ABOUT                  #
+######################################### 
+*/
+
+
+
+/* 
+#########################################
+#           MEDIA QUERIES               #
+######################################### 
+*/
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .mainbar{
+        flex-flow: row;
+    }
+    .mainbar__link{
+        margin-bottom: 0px;
+        margin-right: 16px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .logo{
+        margin-bottom: 0px;
+        margin-left:16px;
+    }
+    .header{
+        flex-flow: row;
+        justify-content: space-between;
+        height: 80px;
+    }
+    .mainbar{
+        height: 60px;
+    }
+    .mainbar__link{
+        display: flex;
+        align-items: center;
+        height: inherit;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .presentation h2{
+        font-size: 36px;
+        margin-bottom: 16px;
+    }
+    .presentation h3{
+        font-size: 72px;
+        margin-bottom: 16px;
+    }
+    .presentation__container{
+        font-size: 24px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
 }
